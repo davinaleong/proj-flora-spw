@@ -5,6 +5,9 @@
     --color-text: #fff;
     --color-accent: #CF999E;
     --color-border: #666;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Lato", sans-serif;
 }
 
 *,
@@ -18,4 +21,27 @@
 body {
     color: var(--color-text);
     background: var(--color-bg);
+    font-family: var(--font-body);
+    font-size: 16px;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-accent);
+}
+
+.collapse {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.collapse:hover,
+.collapse:focus {
+    color: var(--color-accent);
 }
