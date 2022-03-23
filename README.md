@@ -1,2 +1,3 @@
-# proj-flora-spw
-Flora Single Page Website Template
+# Flora Single Page Website Template
+
+My first single-page website template.
