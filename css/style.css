@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-    --color-bg: #000;
-    --color-text: #fff;
-    --color-accent: #CF999E;
-    --color-border: #666;
+  --color-bg: #000;
+  --color-text: #fff;
+  --color-accent: #99cfa5;
+  --color-accent-light: #d1f1d8;
+  --color-border: #666;
 
-    --font-heading: "Playfair Display", serif;
-    --font-body: "Lato", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
 }
 
 *,
@@ -19,29 +20,29 @@
 }
 
 body {
-    color: var(--color-text);
-    background: var(--color-bg);
-    font-family: var(--font-body);
-    font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 16px;
 }
 
 a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 a:hover,
 a:focus {
-    color: var(--color-accent);
+  color: var(--color-accent-light);
 }
 
 .collapse {
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
 .collapse:hover,
 .collapse:focus {
-    color: var(--color-accent);
+  color: var(--color-accent-light);
 }
