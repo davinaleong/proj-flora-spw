@@ -32,7 +32,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   min-height: 100vh;
-  padding-top: 91px;
+  padding-top: 75px;
   padding-bottom: 51px;
 }
 
@@ -62,7 +62,7 @@ a:focus {
   width: 100vw;
   background-color: var(--color-bg);
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
   padding: var(--header-spacing);
   position: fixed;
