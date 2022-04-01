@@ -28,7 +28,7 @@
 
 body {
   color: var(--color-text);
-  background: var(--color-bg);
+  background: #f00;
   font-family: var(--font-body);
   font-size: 16px;
   min-height: 100vh;
@@ -100,8 +100,13 @@ a:focus {
   display: none;
 }
 
+main {
+  background-color: #ff0;
+}
+
 .main-footer {
   width: 100vw;
+  background-color: var(--color-bg);
   position: fixed;
   z-index: var(--fixed-layer);
   padding: var(--footer-spacing);
