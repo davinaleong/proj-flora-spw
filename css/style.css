@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-text);
   background: #f00;
@@ -37,6 +41,18 @@ body {
   min-height: 100vh;
   padding-top: var(--header-height);
   padding-bottom: var(--footer-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  font-style: italic;
+  color: var(--color-accent);
 }
 
 a {
@@ -97,6 +113,11 @@ a:focus {
 
 .font-body {
   font-family: var(--font-body);
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
 }
 
 .main-header {
@@ -162,10 +183,6 @@ section {
 }
 
 .hero-title {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: bold;
-  color: var(--color-accent);
   font-size: 6rem;
   margin-bottom: 1.5rem;
   position: relative;
@@ -185,7 +202,26 @@ section {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  /* font-weight: normal; */
+}
+
+.about-section {
+  background-color: var(--color-bg);
+}
+
+.about-image {
+  height: 100vw;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
 }
 
 .main-footer {
