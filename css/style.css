@@ -6,6 +6,7 @@
   --color-accent: #99cfa5;
   --color-accent-light: #d1f1d8;
   --color-border: #666;
+  --color-category-bg: rgba(0, 0, 0, 0.5);
 
   --font-heading: "Playfair Display", serif;
   --font-body: "Lato", sans-serif;
@@ -120,6 +121,10 @@ a:focus {
   width: 100%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .main-header {
   width: 100vw;
   background-color: var(--color-bg);
@@ -193,7 +198,7 @@ section {
   display: block;
   background-color: var(--color-border);
   height: 1px;
-  width: 3ch;
+  width: 110px;
   position: absolute;
   bottom: -0.25rem;
   left: 50%;
@@ -204,11 +209,7 @@ section {
   font-size: 1.5rem;
 }
 
-.about-section {
-  background-color: var(--color-bg);
-}
-
-.about-image {
+.img-about {
   height: 100vw;
   object-fit: cover;
 }
@@ -222,6 +223,56 @@ section {
 
 .section-title {
   font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.products-section {
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.products-section::before {
+  content: "";
+  display: block;
+  background-color: var(--color-border);
+  height: 1px;
+  width: 110px;
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.collection {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.category {
+  position: relative;
+}
+
+.img-category {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.category-header {
+  position: absolute;
+  padding: 1rem;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-category-bg);
+}
+
+.category-title {
+  font-size: 1.25;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .main-footer {
