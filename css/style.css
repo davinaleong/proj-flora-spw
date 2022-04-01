@@ -9,6 +9,10 @@
 
   --font-heading: "Playfair Display", serif;
   --font-body: "Lato", sans-serif;
+
+  --border-debug: thin solid #fff;
+
+  --header-spacing: 1rem;
 }
 
 *,
@@ -27,7 +31,7 @@ body {
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -39,10 +43,52 @@ a:focus {
 
 .collapse {
   cursor: pointer;
+  color: var(--color-accent);
   transition: color 0.3s ease-in-out;
 }
 
 .collapse:hover,
 .collapse:focus {
   color: var(--color-accent-light);
+}
+
+.main-header {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: var(--header-spacing);
+  position: relative;
+}
+
+.main-nav {
+  list-style-type: none;
+  margin-top: var(--header-spacing);
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 0;
+  overflow: hidden;
+}
+
+.collapse {
+  position: absolute;
+  top: var(--header-spacing);
+  right: var(--header-spacing);
+}
+
+.main-header .collapse .fas.fa-times {
+  display: none;
+}
+
+.main-header.expanded .main-nav {
+  height: auto;
+}
+
+.main-header.expanded .collapse .fas.fa-times {
+  display: inline;
+}
+
+.main-header.expanded .collapse .fas.fa-bars {
+  display: none;
 }
