@@ -6,6 +6,7 @@
   --color-accent: #99cfa5;
   --color-accent-light: #d1f1d8;
   --color-border: #666;
+  --color-footer: #999;
   --color-category-bg: rgba(0, 0, 0, 0.3);
   --color-modal-bg: rgba(0, 0, 0, 0.7);
 
@@ -69,14 +70,16 @@ a:focus {
   color: var(--color-accent-light);
 }
 
-.collapse {
-  cursor: pointer;
+button {
+  background-color: transparent;
+  border: none;
   color: var(--color-accent);
+  font-size: 1.2rem;
   transition: color 0.3s ease-in-out;
 }
 
-.collapse:hover,
-.collapse:focus {
+button:hover,
+button:focus {
   color: var(--color-accent-light);
 }
 
@@ -288,6 +291,7 @@ a:focus {
 .category-title {
   font-size: 1.25;
   font-style: italic;
+  font-family: var(--font-heading);
   text-decoration: underline;
 }
 
@@ -311,6 +315,8 @@ a:focus {
   padding-right: var(--footer-spacing);
   padding-top: var(--footer-spacing);
   padding-bottom: var(--footer-spacing);
+  font-size: 0.8rem;
+  color: var(--color-footer);
   bottom: 0;
 }
 
@@ -333,6 +339,7 @@ a:focus {
 .modal-content {
   max-height: calc(100vh - 2rem);
   overflow-x: auto;
+  clear: both;
 }
 
 .modal-content-inner {
@@ -348,12 +355,4 @@ a:focus {
 
 .close {
   float: right;
-  cursor: pointer;
-  color: var(--color-accent);
-  transition: color 0.3s ease-in-out;
-}
-
-.close:hover,
-.close:focus {
-  color: var(--color-accent-light);
 }
