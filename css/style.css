@@ -13,6 +13,9 @@
   --border-debug: thin solid #fff;
 
   --header-spacing: 1rem;
+  --footer-spacing: 1rem;
+
+  --fixed-layer: 1;
 }
 
 *,
@@ -28,6 +31,7 @@ body {
   background: var(--color-bg);
   font-family: var(--font-body);
   font-size: 16px;
+  min-height: 100vh;
 }
 
 a {
@@ -53,11 +57,14 @@ a:focus {
 }
 
 .main-header {
+  width: 100vw;
+  background-color: var(--color-bg);
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: bold;
   padding: var(--header-spacing);
-  position: relative;
+  position: fixed;
+  z-index: var(--fixed-layer);
 }
 
 .main-nav {
@@ -91,4 +98,14 @@ a:focus {
 
 .main-header.expanded .collapse .fas.fa-bars {
   display: none;
+}
+
+.main-footer {
+  width: 100vw;
+  position: fixed;
+  z-index: var(--fixed-layer);
+  padding: var(--footer-spacing);
+  bottom: 0;
+  text-align: center;
+  font-style: italic;
 }
