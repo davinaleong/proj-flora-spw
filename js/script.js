@@ -1,11 +1,16 @@
+const windowWidths = {
+  mobile: 540,
+  tablet: 768,
+  desktop: 1280,
+};
 const classExpanded = "expanded";
 const classHidden = "hidden";
 
-window.onload = () => {
-  const main = document.querySelector("main");
-  const mainHeader = document.getElementById("mainHeader");
-  const toggleNav = document.getElementById("toggleNav");
+const main = document.querySelector("main");
+const mainHeader = document.getElementById("mainHeader");
+const toggleNav = document.getElementById("toggleNav");
 
+window.onload = () => {
   const categoryButtons = document.querySelectorAll(
     "button[data-click=modalTrigger]"
   );
@@ -32,6 +37,13 @@ window.onload = () => {
   closeButtons.forEach((button) => {
     button.addEventListener("click", (e) => hideSingleModal(e.target));
   });
+};
+
+window.onresize = () => {
+  const windowWidth = window.innerWidth;
+  if (windowWidth > windowWidths.mobile) {
+    mainHeader.classList.remove(classExpanded);
+  }
 };
 
 // Show copyright with year on footer

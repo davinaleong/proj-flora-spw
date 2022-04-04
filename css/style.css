@@ -17,6 +17,10 @@
 
   --header-spacing: 1rem;
   --footer-spacing: 1rem;
+  --section-spacing: 2rem;
+  --content-spacing: 1.5rem;
+  --category-header-spacing: 1rem;
+  --modal-spacing: 1rem;
 
   --header-height: 75px;
   --footer-height: 51px;
@@ -41,7 +45,7 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: clamp(16px, 1rem + 1vw, 1.15rem);
   min-height: 100vh;
   padding-top: var(--header-height);
   padding-bottom: var(--footer-height);
@@ -219,48 +223,37 @@ button:focus {
 }
 
 .content {
-  --spacing: 1.5rem;
-
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-left: var(--content-spacing);
+  padding-right: var(--content-spacing);
+  padding-top: var(--content-spacing);
+  padding-bottom: var(--content-spacing);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1rem + 2vw, 4rem);
   margin-bottom: 1rem;
 }
 
 .products-section {
-  margin-top: 1.5rem;
+  padding-left: var(--section-spacing);
+  padding-right: var(--section-spacing);
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
   position: relative;
+  background-color: var(--color-accent-light);
 }
 
-.products-section::before {
-  content: "";
-  display: block;
-  background-color: var(--color-border);
-  height: 1px;
-  width: 110px;
-  position: absolute;
-  top: -0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
+.products-section .section-title {
+  color: var(--color-bg);
 }
 
 .collection {
-  --spacing: 2rem;
-
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -274,13 +267,11 @@ button:focus {
 }
 
 .category-header {
-  --spacing: 1rem;
-
   position: absolute;
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-left: var(--category-header-spacing);
+  padding-right: var(--category-header-spacing);
+  padding-top: var(--category-header-spacing);
+  padding-bottom: var(--category-header-spacing);
   top: auto;
   left: 0;
   right: 0;
@@ -293,17 +284,33 @@ button:focus {
   font-style: italic;
   font-family: var(--font-heading);
   text-decoration: underline;
+  color: var(--color-text);
+}
+
+.category-title:hover,
+.category-title:focus {
+  color: var(--color-text);
 }
 
 .contact-section {
-  padding-bottom: 2rem;
+  padding-left: var(--content-spacing);
+  padding-right: var(--content-spacing);
+  padding-top: var(--content-spacing);
+  padding-bottom: var(--content-spacing);
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(0.5em, 1em + 1vw, 1em);
   font-family: var(--font-heading);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5em, 1em + 1vw, 3em);
 }
 
 .main-footer {
@@ -315,14 +322,12 @@ button:focus {
   padding-right: var(--footer-spacing);
   padding-top: var(--footer-spacing);
   padding-bottom: var(--footer-spacing);
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 1rem + 1vw, 1rem);
   color: var(--color-footer);
   bottom: 0;
 }
 
 .modal {
-  --spacing: 1rem;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -330,10 +335,10 @@ button:focus {
   min-height: 100vh;
   z-index: var(--popup-layer);
   background-color: var(--color-modal-bg);
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-left: var(--modal-spacing);
+  padding-right: var(--modal-spacing);
+  padding-top: var(--modal-spacing);
+  padding-bottom: var(--modal-spacing);
 }
 
 .modal-content {
@@ -355,4 +360,18 @@ button:focus {
 
 .close {
   float: right;
+}
+
+@media screen and (min-width: 48rem) {
+  .content {
+    text-align: center;
+  }
+
+  .collection {
+    flex-direction: row;
+  }
+
+  .category {
+    width: calc(50% - 1rem);
+  }
 }
