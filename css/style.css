@@ -78,7 +78,7 @@ button {
   background-color: transparent;
   border: none;
   color: var(--color-accent);
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
   transition: color 0.3s ease-in-out;
 }
 
@@ -167,8 +167,8 @@ button:focus {
 
 .collapse {
   position: absolute;
-  top: var(--header-spacing);
-  right: var(--header-spacing);
+  top: 1.25rem;
+  right: 1rem;
 }
 
 .main-header .collapse .fas.fa-times {
@@ -310,6 +310,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
   gap: clamp(0.5em, 1em + 1vw, 3em);
 }
 
@@ -363,6 +364,24 @@ button:focus {
 }
 
 @media screen and (min-width: 48rem) {
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(1.5rem, 1rem + 1vw, 3rem);
+    height: auto;
+    margin-top: 0;
+  }
+
+  .collapse {
+    display: none;
+  }
+
   .content {
     text-align: center;
   }
